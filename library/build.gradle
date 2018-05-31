@@ -1,18 +1,13 @@
 apply plugin: 'com.android.library'
-apply plugin: 'com.github.dcendents.android-maven'
-apply plugin: "com.jfrog.bintray"
-
-version = "1.2.1"
 
 android {
-    compileSdkVersion 21
-    buildToolsVersion "21.1.2"
+    compileSdkVersion 26
 
     defaultConfig {
         minSdkVersion 9
-        targetSdkVersion 21
+        targetSdkVersion 26
         versionCode 1
-        versionName "1.2.1"
+        versionName "1.2.2"
     }
     buildTypes {
         release {
@@ -23,7 +18,7 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
 }
 
 //def siteUrl = 'https://github.com/Cloudist/ACProgressLite'
@@ -98,4 +93,10 @@ dependencies {
 //        publish = true
 //    }
 //}
+apply plugin: "com.jfrog.bintray"
+apply plugin: 'com.github.dcendents.android-maven'
+
+//https://jitpack.io/docs/BUILDING/#gradle-projects
+apply plugin: 'maven'
+group = 'com.github.smarcet'
 

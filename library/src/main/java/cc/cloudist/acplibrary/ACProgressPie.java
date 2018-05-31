@@ -50,7 +50,9 @@ public class ACProgressPie extends ACProgressBaseDialog {
                 @Override
                 public void run() {
                     int result = mSpinCount % (mBuilder.mPieces + 1);
-                    mPieView.updateAngle(360f / mBuilder.mPieces * result);
+                    PieView refPieView = mPieView;
+                    if (refPieView != null)
+                        refPieView.updateAngle(360f / mBuilder.mPieces * result);
                     if (result == 0) {
                         mSpinCount = 1;
                     } else {
